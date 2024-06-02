@@ -16,10 +16,25 @@ SYNCUSER=trimui
 SYNCPASS=trimuisync
 DEVICENAME=Trimui\ Smart\ Pro
 DEFAULTFOLDER=/mnt/SDCARD/System/syncthing/files
+DEVICETYPE=pro
 ### DO NOT CHANGE THESE, USE THE OPTIONS FILE!
 
-# DO NOT CHANGE THIS UNLESS YOU ABSOLUTELLY KNOWS WHAT YOURE DOING!
-DLINK=https://bin.entware.net/aarch64-k3.10/syncthing_1.27.3-1_aarch64-3.10.ipk
+# DO NOT CHANGE THIS UNLESS YOU ABSOLUTELY KNOWS WHAT YOURE DOING!
+DLINK=""
+if [ "$DEVICETYPE" == "pro" ]; then
+  DLINK=https://bin.entware.net/aarch64-k3.10/syncthing_1.27.3-1_aarch64-3.10.ipk
+elif [ "$DEVICETYPE" == "smart" ]; then
+  DLINK=https://bin.entware.net/armv7sf-k3.2/syncthing_1.27.3-1_armv7-3.2.ipk
+else
+  sdl2imgshow \
+    -i "$HOMEAPP/installbg.png" \
+    -f "$HOMEAPP/font.ttf" \
+    -s 90 \
+    -c "255,0,0" \
+    -t "Unknown device type. Please check your options file." &
+  sleep 15
+  exit 1
+fi
 
 #=======================
 # install script
