@@ -28,5 +28,10 @@ DEVICENAME=Trimui\ Smart\ Pro
 # If the folder doenst exist, it'll be created.
 DEFAULTFOLDER=/mnt/SDCARD/System/syncthing/files
 
+# Device type (smart or pro), default is pro. This should be set to smart if you have a TrimUI Smart,
+# and pro if you have a TrimUI Smart Pro. This is case sensitive. Note - if you have this set incorrectly,
+# it will cause the wrong version of the Syncthing package to be downloaded, and won't work.
+DEVICETYPE=pro
+
 # alpha#9751
 # https://github.com/veckia9x/Trimui-X
