@@ -5,6 +5,8 @@
 # If "yes" is selected then Syncthing will start with system startup. No need
 # to manually start synthing, but it will consume resources from the system,
 # even with wifi off.
+# Note: If you have a TrimUI Smart (not pro), you should set this to "no" as the device
+# doesn't seem to play nicely with Syncthing starting at boot.
 BOOT_ENABLE=no
 
 # Default user (trimui) on first install, change to something else if you like, no special chars or space.
